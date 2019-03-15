@@ -1,8 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     package="com.aliyun.alink.devicesdk.demo">
 
     <uses-permission android:name="android.permission.INTERNET" />
+
     <application
         android:name="com.aliyun.alink.devicesdk.app.DemoApplication"
         android:allowBackup="true"
@@ -12,7 +14,8 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:replace="android:allowBackup,android:label">
-        <activity android:name="com.aliyun.alink.devicesdk.demo.LightExampleActivity">
+        <activity android:name=".TimeExampleActivity"></activity>
+        <activity android:name=".LightExampleActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -20,4 +23,5 @@
             </intent-filter>
         </activity>
     </application>
+
 </manifest>

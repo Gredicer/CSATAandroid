@@ -1,20 +1,19 @@
 package com.aliyun.alink.devicesdk.demo;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Looper;
 import android.os.Message;
 import android.support.annotation.Nullable;
 import android.text.TextUtils;
-import android.util.Base64;
 import android.util.Log;
+import android.view.GestureDetector;
+import android.view.MotionEvent;
 import android.view.View;
 import android.widget.Button;
 import android.widget.SeekBar;
 import android.widget.TextView;
-import android.widget.SeekBar;
-import android.widget.SeekBar.OnSeekBarChangeListener;
-
 
 
 import com.alibaba.fastjson.JSONObject;
@@ -31,51 +30,18 @@ import com.aliyun.alink.linksdk.cmp.core.base.ConnectState;
 import com.aliyun.alink.linksdk.cmp.core.listener.IConnectNotifyListener;
 import com.aliyun.alink.linksdk.cmp.core.listener.IConnectSendListener;
 import com.aliyun.alink.linksdk.cmp.core.listener.IConnectSubscribeListener;
-import com.aliyun.alink.linksdk.tmp.api.MapInputParams;
-import com.aliyun.alink.linksdk.tmp.api.OutputParams;
 import com.aliyun.alink.linksdk.tmp.device.payload.ValueWrapper;
-import com.aliyun.alink.linksdk.tmp.devicemodel.Service;
 import com.aliyun.alink.linksdk.tmp.listener.IPublishResourceListener;
-import com.aliyun.alink.linksdk.tmp.listener.ITResRequestHandler;
-import com.aliyun.alink.linksdk.tmp.listener.ITResResponseCallback;
-import com.aliyun.alink.linksdk.tmp.utils.ErrorInfo;
 import com.aliyun.alink.linksdk.tools.AError;
 import com.aliyun.alink.linksdk.tools.ALog;
 
-import java.io.DataOutputStream;
-import java.io.OutputStream;
 import java.io.UnsupportedEncodingException;
-import java.net.URLEncoder;
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
-import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
-import android.util.Log;
-import android.view.View;
-import android.widget.Button;
+
 import android.widget.Toast;
 
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStream;
-import java.io.InputStreamReader;
-import java.net.HttpURLConnection;
-import java.net.MalformedURLException;
-import java.net.URL;
-
-import javax.crypto.Mac;
-import javax.crypto.SecretKey;
-import javax.crypto.spec.SecretKeySpec;
-
-import okhttp3.Call;
-import okhttp3.Callback;
-import okhttp3.FormBody;
-import okhttp3.OkHttpClient;
-import okhttp3.Request;
-import okhttp3.Response;
-
-import static com.aliyun.alink.linksdk.tmp.connect.IConnect.a;
+import static java.time.temporal.TemporalAdjusters.next;
 
 /*
  * Copyright (c) 2014-2016 Alibaba Group. All rights reserved.
@@ -100,9 +66,10 @@ import static com.aliyun.alink.linksdk.tmp.connect.IConnect.a;
  * 1.该示例只共快速接入使用，只适用于有 Status、Data属性的快速接入测试设备；
  * 2.真实设备可以参考 ControlPanelActivity 里面有数据上下行示例；
  */
-public class LightExampleActivity extends BaseActivity {
+public  class LightExampleActivity extends BaseActivity {
 
     private final static int REPORT_MSG = 0x100;
+
 
     private final int[] checkLight=new int[256];
 
@@ -117,6 +84,7 @@ public class LightExampleActivity extends BaseActivity {
 
     private static int warmSendnum=0;
     private static int coldSendnum=0;
+
 
     public static String hexStr2Str(String hexStr)
     {
@@ -145,6 +113,9 @@ public class LightExampleActivity extends BaseActivity {
        // showToast("已启动每5秒上报一次状态");
        // log("已启动每5秒上报一次状态");
        // mHandler.sendEmptyMessageDelayed(REPORT_MSG, 2 * 1000);
+
+
+
 
         final SeekBar warmLight=findViewById( R.id.warmLight );
         final TextView warmLightnum=findViewById( R.id.warmLight_num );
@@ -460,6 +431,21 @@ public class LightExampleActivity extends BaseActivity {
             }
         });
     }
+
+    @Override
+    public void next(View view) {
+        Intent intent = new Intent(this, TimeExampleActivity.class);
+        startActivity(intent);
+
+    }
+
+    @Override
+    public void pre(View view) {
+        Intent intent = new Intent(this, TimeExampleActivity.class);
+        startActivity(intent);
+
+    }
+
 
     public static String binaryString2hexString(String binaryString) {
         if (TextUtils.isEmpty(binaryString) || binaryString.length() % 4 != 0) {
