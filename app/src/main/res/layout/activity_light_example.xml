@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+
+    <android.support.v7.widget.LinearLayoutCompat
+        android:gravity="center"
+        android:layout_margin="10dp"
+        android:padding="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+    <Button
+        android:id="@+id/button_1"
+        android:text="1"
+        android:background="@drawable/down"
+        android:layout_marginRight="25dp"
+        android:layout_height="50dp"
+        android:layout_width="50dp"
+        />
+        <Button
+            android:id="@+id/button_2"
+            android:text="2"
+            android:layout_marginLeft="25dp"
+            android:background="@drawable/down"
+            android:layout_height="50dp"
+            android:layout_width="50dp"
+            />
+    </android.support.v7.widget.LinearLayoutCompat>
+    <android.support.v7.widget.LinearLayoutCompat
+        android:gravity="center"
+        android:layout_margin="10dp"
+        android:padding="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <Button
+            android:id="@+id/button_3"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+
+            android:background="@drawable/down"
+            android:text="3" />
+        <Button
+            android:id="@+id/button_4"
+            android:text="4"
+            android:background="@drawable/down"
+            android:layout_height="50dp"
+            android:layout_width="50dp"
+            android:gravity="center"
+            android:layout_marginLeft="50dp"
+            android:layout_marginRight="50dp"
+            />
+
+        <Button
+            android:id="@+id/button_5"
+            android:text="5"
+            android:background="@drawable/down"
+            android:layout_height="50dp"
+            android:layout_width="50dp"
+
+            />
+    </android.support.v7.widget.LinearLayoutCompat>
+
+
+    <android.support.v7.widget.LinearLayoutCompat
+        android:gravity="center"
+        android:layout_margin="10dp"
+        android:padding="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <Button
+            android:id="@+id/button_6"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+
+            android:background="@drawable/down"
+            android:text="6" />
+        <Button
+            android:id="@+id/button_7"
+            android:text="7"
+            android:background="@drawable/down"
+            android:gravity="center"
+            android:layout_marginLeft="50dp"
+            android:layout_marginRight="50dp"
+            android:layout_height="50dp"
+            android:layout_width="50dp"
+            />
+        <Button
+            android:id="@+id/button_8"
+            android:text="8"
+            android:background="@drawable/down"
+            android:layout_height="50dp"
+            android:layout_width="50dp"
+            />
+    </android.support.v7.widget.LinearLayoutCompat>
+
+    <android.support.v7.widget.LinearLayoutCompat
+        android:gravity="center"
+        android:layout_margin="10dp"
+        android:padding="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+
+        <Button
+            android:id="@+id/button_9"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+
+            android:background="@drawable/down"
+            android:text="9" />
+        <Button
+            android:id="@+id/button_10"
+            android:text="10"
+            android:background="@drawable/down"
+            android:gravity="center"
+            android:layout_marginLeft="50dp"
+            android:layout_marginRight="50dp"
+            android:layout_height="50dp"
+            android:layout_width="50dp"
+            />
+        <Button
+            android:id="@+id/button_11"
+            android:text="11"
+            android:background="@drawable/down"
+            android:layout_height="50dp"
+            android:layout_width="50dp"
+            />
+        
+    </android.support.v7.widget.LinearLayoutCompat>
+
+        <SeekBar
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="50dp"
+            android:layout_marginRight="50dp"
+            android:id="@+id/warmLight"
+            android:max="255"
+
+            />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:id="@+id/warmLight_num"/>
+
+    <SeekBar
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="50dp"
+        android:layout_marginRight="50dp"
+        android:id="@+id/coldLight"
+        android:max="255"
+
+        />
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+
+        android:gravity="center"
+        android:id="@+id/coldLight_num"/>
+
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="5dp"
+        android:background="@drawable/normalbutton_background">
+
+        <TextView
+            android:id="@+id/textview_console"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:focusable="true"
+            android:focusableInTouchMode="true" />
+    </ScrollView>
+
+
+</LinearLayout>
