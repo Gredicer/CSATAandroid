@@ -6,7 +6,20 @@
     android:layout_height="match_parent"
     tools:context=".TimeExampleActivity"
     android:id="@+id/timeexample"
-    tools:ignore="Orientation">
+    tools:ignore="Orientation"
+    android:orientation="vertical"
+    android:gravity="center_horizontal">
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center">
+        <Button
+            android:gravity="center_horizontal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="更新时间"/>
+    </LinearLayout>
+
 
 
 </LinearLayout>
